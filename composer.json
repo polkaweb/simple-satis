@@ -1,0 +1,15 @@
+{
+    "name": "dots/simple-satis",
+    "type": "project",
+    "require": {
+        "composer/satis": "^1.0@alpha"
+    },
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Pascal Lim",
+            "email": "pascal.lim@polka.mu"
+        }
+    ],
+    "minimum-stability": "dev"
+}

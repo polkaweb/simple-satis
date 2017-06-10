@@ -127,16 +127,16 @@ RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk
     && mkdir -p /etc/service
 
 ENV COMPOSER_VERSION=1.4.2 \
-		COMPOSER_HOME=/composer \
-		COMPOSER_ALLOW_SUPERUSER=1 \
-		SATIS_VERSION=1.0.0-alpha3 \
-		PATH=/composer/vendor/bin:$PATH
+    COMPOSER_HOME=/composer \
+    COMPOSER_ALLOW_SUPERUSER=1 \
+    SATIS_VERSION=1.0.0-alpha3 \
+    PATH=/composer/vendor/bin:$PATH
 RUN apk add --no-cache --virtual .composer-deps \
       git \
       openssh \
     && curl -sSL https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer --version=${COMPOSER_VERSION} \
     && cd ${COMPOSER_HOME} \
-		&& composer require composer/satis:${SATIS_VERSION}
+    && composer require composer/satis:${SATIS_VERSION}
 
 # Copy configuration files.
 COPY config/ /
